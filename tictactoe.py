@@ -15,6 +15,7 @@ one = " "
 two = " "
 three = " "
 
+#reset positional variables i.e. clear the board of moves made by the players
 def reset():
     
     global one, two, three, four, five, six, seven, eight, nine
@@ -31,6 +32,7 @@ def reset():
     
     return
 
+#function which creates the rows and columns of the three by three board
 def board_process():
     # three user input rows:
     user_top = "| {" "} | {" "} | {" "} |".format(seven,eight,nine)
@@ -41,11 +43,12 @@ def board_process():
     board = "+---+---+---+\n|   |   |   |\n" + user_top + "\n|   |   |   |\n+---+---+---+\n|   |   |   |\n" + user_mid + "\n|   |   |   |\n+---+---+---+\n|   |   |   |\n" + user_btm + "\n|   |   |   |\n+---+---+---+"
     return
 
+#function to print the board
 def displayboard(board):
     print("Here's the board:")
     print(board)
 
-#marker choice
+#function which allows first player to choose X or O to play the round with
 def marker_input():
     
     global player1_marker
@@ -306,8 +309,9 @@ def player_two_input():
             pass
         
     return int(player_two)
-    
-    def win_check():
+
+#function which checks if a player has won (includes check for a draw)
+def win_check():
     
     global one, two, three, four, five, six, seven, eight, nine, player1_marker, player2_marker, game_on
     
@@ -391,6 +395,7 @@ def player_two_input():
     else:
         pass
 
+#function which asks if players wish to play the game again
 def replay():
     
     global game, game_on
@@ -420,6 +425,7 @@ def replay():
 
 game = True
 
+#GAME PLAY
 while game:
 
     game_on = True
